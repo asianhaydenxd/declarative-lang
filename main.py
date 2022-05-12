@@ -24,10 +24,15 @@ class IntToken(Token):
 class FloatToken(Token):
     def __str__(self):
         return f'float: {self.text}'
+    
+class StringToken(Token):
+    def __str__(self):
+        return f'string: {self.text}'
+
 
 class Lexer:
     def __init__(self, code, filename):
-        self.code = code
+        self.code = code + ' '
         self.filename = filename
         self.index = 0
         self.line = 0
